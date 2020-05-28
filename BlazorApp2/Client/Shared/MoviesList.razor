@@ -1,0 +1,30 @@
+﻿
+<div>
+   
+    @if (Movies == null)
+    {
+        <img src="https://wtb.app.channeliq.com/content/images/spinner.gif" />
+    }
+    else if (Movies.Count == 0)
+    {
+        <text>There are no records to show</text>
+    }
+    else
+    {
+        @foreach (var movie in Movies)
+        {
+
+            <IndividualMovie Movie="movie" />
+            <hr />
+        }
+
+
+    }
+
+</div>
+
+@code {
+    [Parameter] public List<Movie> Movies { get; set; }
+
+    
+}
